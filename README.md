@@ -23,6 +23,9 @@ My implementation of the given prompt has the following structure:
 * Sets the direction that the program desires fosho
 * ~~Can drop the kids off at school~~ 
 
+##### Testing #####
+* Using fundamentals of test-driven design, I added some tests in prior to fleshing out the rest of the program. In the development process, however, many tests became incompatible with various structural/design changes to the program, and so were removed/set aside for later.
+
 
 ##### Some interesting design #####
 Can't say this is the most well designed, intricately, elegant, and fascinating program. I did, however, incorporate some nifty tricks into the code. For example, I have written the code for several initialize functions to take a hash as a perimeter. This allows for an unordered parameters list when initializing these objects, which would be a lot easier to handle (no need to declare parameters in a specific order!)
