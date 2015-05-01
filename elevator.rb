@@ -63,7 +63,7 @@ class Elevator
 	end
 
 	def to_s
-		"#{@direction} [ #{@listpax.size} pax ] #{@direction}"
+		"#{@direction} [ #{@listpax.size} pax ] #{@direction} : #{destinations.to_a}"
 	end
 
 end

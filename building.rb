@@ -36,6 +36,7 @@ class Building
 		# 	end
 		# end
 
+
 		cfloor = elevators[0].current_floor
 
 		elevators[0].add_pax(floors[cfloor].exit_person)

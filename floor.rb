@@ -1,5 +1,6 @@
 class Floor
 
+	require 'set'
 	attr_accessor :waitlist, :floor, :elevator_present, :arrivals
 
 	FLOOR_MAX_PERSONS = 10
