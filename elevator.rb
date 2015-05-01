@@ -17,7 +17,9 @@ class Elevator
 
 	def clock_tick
 
-		if (@destinations.empty?) then @direction = '-' else set_direction end
+		if (@destinations.empty?) 
+			if @current_floor != ELEV_RESTING_FLOOR then @direction = 'v' else @direction = '-' end
+		else set_direction end
 		
 		if (@direction == '^')
 			@current_floor = @current_floor + 1

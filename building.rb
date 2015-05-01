@@ -44,9 +44,6 @@ class Building
 			floors[cfloor].arrive(person)
 			elevators[0].dropoff
 		end
-
-
-
 	end
 
 	def to_s
@@ -65,8 +62,5 @@ class Building
 				puts ""
 			end
 		end
-
-
 	end
-
 end

@@ -14,7 +14,8 @@ class Simulation
 	end
 
 	def run ticks	
-		(1..ticks).each do 
+		(1..ticks).each do |i| 
+			print "\nTick #{i}/#{ticks}"
 			elements.each do |ele| ele.clock_tick end
 			sleep(1)
 		end

@@ -13,7 +13,7 @@ building.elevators.each do |ele| sim.register(ele) end
 
 puts ""
 
-#building.elevators[0].add_pax(Person.new(3))
+building.elevators[0].add_pax(Person.new(3))
 building.floors[0].add_person(Person.new(2))
 
 puts "Building w/ #{building.number_of_floors} floors and #{building.number_of_elevators} elevators."
