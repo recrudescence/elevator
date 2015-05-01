@@ -2,10 +2,10 @@ class Elevator
 
 	require 'set'
 	require 'pry'
-	attr_accessor :listpax, :current_floor, :top_floor, :destinations, :direction
+	attr_accessor :listpax, :current_floor, :top_floor, :destinations, :direction, :num_arrivals
 
 	ELEV_MAX_PERSONS	= 10
-	ELEV_RESTING_FLOOR	= 1
+	ELEV_RESTING_FLOOR	= 0
 
 	def initialize args = {}
 		@listpax		= Array.new
@@ -27,7 +27,7 @@ class Elevator
 			@current_floor = @current_floor - 1
 		end
 
-		arrive
+
 
 		to_s
 	end
@@ -47,7 +47,7 @@ class Elevator
 		end
 	end
 
-	def arrive
+	def dropoff
 		if @destinations.include?(@current_floor)
 			@destinations.delete(@current_floor)
 			@listpax.select{ |pax| pax.destination == @current_floor}.each do |person|
@@ -61,7 +61,7 @@ class Elevator
 	end
 
 	def to_s
-		"[ #{@listpax.size} pax ]: #{@current_floor} #{@direction} ; destinations: #{destinations.to_a}"
+		"#{@direction} [ #{@listpax.size} pax ] #{@direction}"
 	end
 
 end

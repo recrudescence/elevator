@@ -1,12 +1,13 @@
 class Floor
 
-	attr_accessor :persons, :floor, :elevator_present
+	attr_accessor :waitlist, :floor, :elevator_present, :arrivals
 
 	FLOOR_MAX_PERSONS = 10
 
 	def initialize floor, *people
 		@floor = floor
-		@persons = Array.new
+		@waitlist = Array.new
+		@arrivals = Array.new
 		@elevator_present = false
 		people.each do |p| add_person(p) end
 	end
@@ -17,25 +18,33 @@ class Floor
 	end
 
 	def notify
-		@elevator_present = !@elevator_present
+		elevator_present = true
 	end
 
 	def add_person person
 		if num_waiting < FLOOR_MAX_PERSONS
-			persons.push(person)
+			waitlist.push(person)
 		end
 	end
 
 	def exit_person
-		persons.shift
+		waitlist.shift
+	end
+
+	def arrive person
+		arrivals.push(person)
 	end
 
 	def num_waiting
-		persons.size
+		waitlist.size
+	end
+
+	def full?
+		num_waiting = FLOOR_MAX_PERSONS
 	end
 
 	def to_s
-		"_ FL #{floor}: #{persons.size} pax _"
+		"_ FL #{floor}: #{waitlist.size} pax waiting; #{arrivals.size} pax arrived _ "
 	end
 
 end

@@ -1,11 +1,11 @@
 class Person
 
-	attr_reader :destination, :arrival
+	attr_reader :destination, :board, :arrive
 
 	def initialize floor
 		@destination = floor
-		@arrival = false
-		@done = false
+		@board = false
+		@arrive = false
 	end
 
 	def clock_tick
@@ -13,7 +13,7 @@ class Person
 	end
 
 	def notify
-		@arrival = true
+		@board = true
 	end
 
 	def to_s
